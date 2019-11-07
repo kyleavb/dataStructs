@@ -70,13 +70,29 @@ class LinkedList {
             }
 
         }else{
-            let previous
+            let previous;
 
             while( current.next != null ){
                 previous = current;
                 current = current.next;
             }
             previous.next = null;
+        }
+    }
+
+    insertAt( loc, data ){
+        if( loc <= this.size ){
+            let current = this.head;
+            let newNode = new Node( data );
+            let previous;
+
+            for( let i = 1; i < loc; i++ ){
+                previous = current;
+                current = current.next;
+            }
+            previous.next = newNode
+            newNode.next = current;
+            // current.next = newNode;
         }
     }
 }
@@ -87,5 +103,8 @@ temp.add( 3 );
 temp.add( 4 );
 temp.add( 5 );
 temp.add( 6 );
-temp.remove(5);
+// temp.remove();
+temp.insertAt( 3, 33 );
+temp.print()
+temp.remove( 33 );
 temp.print()
