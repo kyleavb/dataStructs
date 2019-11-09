@@ -92,7 +92,6 @@ class LinkedList {
             }
             previous.next = newNode
             newNode.next = current;
-            // current.next = newNode;
         }
     }
 }
