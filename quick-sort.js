@@ -21,7 +21,6 @@ const quickSort = ( data ) => {
         }
 
         if( item === comp ){
-            console.log( item, comp)
             mid.push( item );
         }
     }
